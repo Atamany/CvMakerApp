@@ -1,0 +1,20 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    @await Html.PartialAsync("Header.cshtml")
+<body>
+    <div class="container-scroller">
+        @await Html.PartialAsync("Navbar.cshtml")
+        <div class="container-fluid page-body-wrapper">
+            @await Html.PartialAsync("Sidebar.cshtml")
+            <div class="main-panel">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    @await Html.PartialAsync("Script.cshtml")
+</body>
+</html>
