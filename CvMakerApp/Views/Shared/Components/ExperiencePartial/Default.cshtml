@@ -1,0 +1,17 @@
+﻿@using CvMakerApp.Entity.Entities
+@model List<Experience>
+<section>
+    <h2>Deneyim</h2>
+
+    @foreach (var item in Model)
+    {
+        <div>
+            <div class="position">@item.Position</div>
+        <div class="company">@item.Company</div>
+        <div class="date">@item.StartDate – @item.EndDate</div>
+        <ul>
+            <li>@item.Description</li>
+        </ul>
+    </div>
+    }
+</section>

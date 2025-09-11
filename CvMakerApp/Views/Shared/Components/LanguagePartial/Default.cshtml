@@ -1,0 +1,11 @@
+﻿@using CvMakerApp.Entity.Entities
+@model List<Language>
+<section>
+    <h2>Dil Yetkinlikleri</h2>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@item.LanguageName — @item.LanguageLevel</li>
+        }
+    </ul>
+</section>

@@ -1,0 +1,12 @@
+﻿@using CvMakerApp.Entity.Entities
+@model List<Stack>
+
+<section>
+    <h2>Teknik Beceriler</h2>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@item.Description</li>
+        }
+    </ul>
+</section>

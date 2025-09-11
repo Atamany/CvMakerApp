@@ -1,0 +1,111 @@
+﻿<style>
+    /* Genel düzen */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f0f4f8;
+        color: #1a1a1a;
+        margin: 30px auto;
+        max-width: 900px;
+        line-height: 1.5;
+    }
+    /* Kart stil */
+    section {
+        background: #fff;
+        padding: 20px 30px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    /* Başlıklar */
+    h1 {
+        font-size: 2.4rem;
+        margin: 0;
+        color: #003366;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+        color: #00509e;
+        border-bottom: 2px solid #00509e;
+        padding-bottom: 4px;
+        margin-bottom: 15px;
+    }
+    /* İletişim */
+    .contact-info {
+        font-size: 0.9rem;
+        margin-top: 6px;
+        color: #333;
+    }
+
+        .contact-info a {
+            color: #00509e;
+            text-decoration: none;
+        }
+
+            .contact-info a:hover {
+                text-decoration: underline;
+            }
+    /* Üst kısım: isim + resim */
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+    .header-left {
+        flex: 1 1 60%;
+    }
+
+    .header-right {
+        flex: 0 0 120px;
+    }
+
+    .profile-pic {
+        border-radius: 50%;
+        width: 110px;
+        height: 110px;
+        object-fit: cover;
+        border: 3px solid #00509e;
+    }
+    /* Liste stilleri */
+    ul {
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+    /* Pozisyon ve tarih */
+    .position {
+        font-weight: 600;
+        color: #004080;
+    }
+
+    .company {
+        font-style: italic;
+        color: #666;
+    }
+
+    .date {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 10px;
+    }
+    /* İlgi alanları paragraf */
+    .interests {
+        margin-top: 0;
+    }
+    /* Responsive */
+    @@media (max-width: 600px) {
+        .header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .header-right {
+            margin-top: 15px;
+        }
+    }
+</style>

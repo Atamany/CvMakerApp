@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yiğit Ataman - Profesyonel CV</title>
+    @await Html.PartialAsync("StylePartial")
+</head>
+<body>
+
+    @await Component.InvokeAsync("HeaderPartial")
+    @await Component.InvokeAsync("DescriptionPartial")
+    @await Component.InvokeAsync("ExperiencePartial")
+    @await Component.InvokeAsync("EducationPartial")
+    @await Component.InvokeAsync("MembershipPartial")
+    @await Component.InvokeAsync("LanguagePartial")
+    @await Component.InvokeAsync("StackPartial")
+    @await Component.InvokeAsync("VoluntaryPartial")
+    @await Component.InvokeAsync("TestimonialPartial")
+</body>
+</html>

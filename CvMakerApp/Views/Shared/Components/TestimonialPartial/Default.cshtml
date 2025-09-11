@@ -1,0 +1,10 @@
+﻿@using CvMakerApp.Entity.Entities
+@model List<Testimonial>
+
+
+<section>
+    <h2>Referanslar</h2>
+    <ul>@foreach(var item in Model){
+        <li><strong>@item.TestimonialName</strong> – @item.Position (@item.Company)</li>}
+    </ul>
+</section>

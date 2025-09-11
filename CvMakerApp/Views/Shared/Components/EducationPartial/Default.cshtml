@@ -1,0 +1,12 @@
+﻿@using CvMakerApp.Entity.Entities
+@model List<Education>
+
+<section>
+    <h2>Eğitim</h2>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><strong>@item.SchoolName</strong> — @item.Department (@item.EducationalType), @item.StartDate – @item.EndDate</li>
+        }
+    </ul>
+</section>

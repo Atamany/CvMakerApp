@@ -1,0 +1,15 @@
+﻿@using CvMakerApp.Entity.Entities
+@model Title
+
+<div class="header">
+    <div class="header-left">
+        <h1>@Model?.Name @Model?.Surname</h1>
+        <div class="contact-info">
+            @Model?.Description<br />
+            <a href="https://@Model?.WebUrl" target="_blank" rel="noopener noreferrer">@Model?.WebUrl</a> | @Model?.Phone | <a href="mailto:@Model?.Email">@Model?.Email</a>
+        </div>
+    </div>
+    <div class="header-right">
+        <img class="profile-pic" src="@Model?.ImageUrl" alt="Profil Resmi" />
+    </div>
+</div>

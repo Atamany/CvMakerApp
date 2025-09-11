@@ -1,0 +1,11 @@
+﻿@using CvMakerApp.Entity.Entities
+@model List<Voluntary>
+
+<section>
+    <h2>Gönüllülük & Topluluk Faaliyetleri</h2>
+    <ul>@foreach (var item in Model)
+        {
+            <li>@item.CompanyName – @item.Position</li>
+        }
+    </ul>
+</section>
