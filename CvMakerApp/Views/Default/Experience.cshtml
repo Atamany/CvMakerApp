@@ -1,0 +1,39 @@
+﻿@using CvMakerApp.Entity.Entities
+@model List<Experience>
+@{
+    ViewData["Title"] = "Experience";
+    Layout = "~/Views/Admin/Index.cshtml";
+    var count = 0;
+}
+
+<h1>Deneyim</h1>
+<table class="table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Şirket</th>
+            <th>Pozisyon</th>
+            <th>Başlangıç Tarihi</th>
+            <th>Bitiş Tarihi</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(++count)</td>
+                <td>@item.Company</td>
+                <td>@item.Position</td>
+                <td>@item.StartDate</td>
+                <td>@item.EndDate</td>
+                <td><a href="~/Default/DeleteExperience/@item.ExperienceId" class="btn btn-danger">Sil</a></td>
+                <td><a href="~/Default/UpdateExperience/@item.ExperienceId" class="btn btn-warning">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<td><a href="~/Default/AddExperience/" class="btn btn-primary">Ekle</a></td>
+
+

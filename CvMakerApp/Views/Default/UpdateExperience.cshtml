@@ -1,0 +1,24 @@
+﻿@using CvMakerApp.Entity.Entities
+@model Experience
+@{
+    ViewData["Title"] = "UpdateExperience";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<h3>Deneyim Güncelle</h3>
+<br />
+<form method="post">
+    <input type="hidden" class="form-control" asp-for="ExperienceId" value="@Model.ExperienceId" />
+    <label>Şirket: </label>
+    <input type="text" class="form-control" asp-for="Company" value="@Model.Company"/><br />
+    <label>Pozisyon: </label>
+    <input type="text" class="form-control" asp-for="Position" value="@Model.Position"/><br />
+    <label>Başlangıç Tarihi: </label>
+    <input type="text" class="form-control" asp-for="StartDate" value="@Model.StartDate"/><br />
+    <label>Bitiş Tarihi: </label>
+    <input type="text" class="form-control" asp-for="EndDate" value="@Model.EndDate" /><br />
+    <label>Açıklama: </label>
+    <textarea rows="5" class="form-control" asp-for="Description" value="@Model.Description"></textarea><br />
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>
+
+
