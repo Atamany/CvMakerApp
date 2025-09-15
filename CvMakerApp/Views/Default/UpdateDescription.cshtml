@@ -1,0 +1,18 @@
+﻿@using CvMakerApp.Entity.Entities
+@model Description
+@{
+    ViewData["Title"] = "UpdateDescription";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<h3>Hakkında Metni</h3>
+<br />
+<form method="post">
+    <input type="hidden" class="form-control" asp-for="DescriptionId" value="@Model.DescriptionId" />
+    <label>Metin: </label>
+    <textarea rows="12" class="form-control" asp-for="DescriptionText" value="@Model.DescriptionText"></textarea><br />
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>
+
+
+
+

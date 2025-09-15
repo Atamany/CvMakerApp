@@ -1,8 +1,25 @@
-﻿
+﻿@using CvMakerApp.Entity.Entities
+@model Title
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Admin/Index.cshtml";
 }
-
-<h1>Index</h1>
-
+<h3>CV Bilgileri</h3><br />
+<form method="post">
+    <input type="hidden" class="form-control" asp-for="TitleId" value="@Model.TitleId" />
+    <label>Ad: </label>
+    <input type="text" class="form-control" asp-for="Name" value="@Model.Name" /><br />
+    <label>Soyad: </label>
+    <input type="text" class="form-control" asp-for="Surname" value="@Model.Surname" /><br />
+    <label>Açıklama: </label>
+    <input type="text" class="form-control" asp-for="Description" value="@Model.Description"/><br />
+    <label>Web Sitesi: </label>
+    <input type="text" class="form-control" asp-for="WebUrl" value="@Model.WebUrl" /><br />
+    <label>Telefon: </label>
+    <input type="text" class="form-control" asp-for="Phone" value="@Model.Phone" /><br />
+    <label>E-Posta: </label>
+    <input type="text" class="form-control" asp-for="Email" value="@Model.Email" /><br />
+    <label>Resim Linki: </label>
+    <input type="text" class="form-control" asp-for="ImageUrl" value="@Model.ImageUrl" /><br />
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>

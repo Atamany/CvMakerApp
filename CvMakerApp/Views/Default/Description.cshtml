@@ -1,0 +1,32 @@
+﻿@using CvMakerApp.Entity.Entities
+@model List<Description>
+@{
+    ViewData["Title"] = "Description";
+    Layout = "~/Views/Admin/Index.cshtml";
+    var count = 0;
+}
+
+<h1>Hakkında Metni</h1>
+<table class="table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Yazı</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(++count)</td>
+                <td>@item.DescriptionText</td>
+                <td><a href="~/Default/DeleteDescription/@item.DescriptionId" class="btn btn-danger">Sil</a></td>
+                <td><a href="~/Default/UpdateDescription/@item.DescriptionId" class="btn btn-warning">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<td><a href="~/Default/AddDescription/" class="btn btn-primary">Ekle</a></td>
+
