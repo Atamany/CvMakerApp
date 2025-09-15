@@ -1,0 +1,20 @@
+﻿@using CvMakerApp.Entity.Entities
+@model Language
+@{
+    ViewData["Title"] = "AddLanguage";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<h3>Dil Yetkinliği Ekle</h3>
+<br />
+<form method="post">
+    <label>Dil: </label>
+    <input type="text" class="form-control" asp-for="LanguageName" /><br />
+    <label>Pozisyon: </label>
+    <input type="text" class="form-control" asp-for="LanguageLevel" /><br />
+    <button type="submit" class="btn btn-primary">Ekle</button>
+</form>
+
+
+
+
+

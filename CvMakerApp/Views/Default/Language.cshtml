@@ -1,0 +1,41 @@
+﻿@using CvMakerApp.Entity.Entities
+@model List<Language>
+@{
+    ViewData["Title"] = "Language";
+    Layout = "~/Views/Admin/Index.cshtml";
+    var count = 0;
+}
+
+<h1>Dil Yetkinlikleri</h1>
+<table class="table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Dil</th>
+            <th>Seviye</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(++count)</td>
+                <td>@item.LanguageName</td>
+                <td>@item.LanguageLevel</td>
+                <td><a href="~/Default/DeleteLanguage/@item.LanguageID" class="btn btn-danger">Sil</a></td>
+                <td><a href="~/Default/UpdateLanguage/@item.LanguageID" class="btn btn-warning">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<td><a href="~/Default/AddLanguage/" class="btn btn-primary">Ekle</a></td>
+
+
+
+
+
+
+
+

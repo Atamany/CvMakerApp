@@ -1,0 +1,26 @@
+﻿@using CvMakerApp.Entity.Entities
+@model Membership
+@{
+    ViewData["Title"] = "UpdateMembership";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<h3>Üyelik Güncelle</h3>
+<br />
+<form method="post">
+    <input type="hidden" class="form-control" asp-for="MembershipId" value="@Model.MembershipId" />
+    <label>Organizasyon: </label>
+    <input type="text" class="form-control" asp-for="Organisation" value="@Model.Organisation" /><br />
+    <label>Pozisyon: </label>
+    <input type="text" class="form-control" asp-for="Position" value="@Model.Position" /><br />
+    <label>Başlangıç Tarihi: </label>
+    <input type="text" class="form-control" asp-for="StartDate" value="@Model.StartDate" /><br />
+    <label>Bitiş Tarihi: </label>
+    <input type="text" class="form-control" asp-for="EndDate" value="@Model.EndDate" /><br />
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>
+
+
+
+
+
+

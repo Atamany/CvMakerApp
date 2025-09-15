@@ -181,5 +181,147 @@ namespace CvMakerApp.Controllers
             }
             return RedirectToAction("Education", "Default");
         }
+        [HttpGet]
+        public IActionResult Membership()
+        {
+            var deger = _context.Memberships.ToList();
+            return View(deger);
+        }
+        [HttpGet]
+        public IActionResult AddMembership()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddMembership(Entity.Entities.Membership membership)
+        {
+            _context.Add(membership);
+            _context.SaveChanges();
+            return RedirectToAction("Membership");
+        }
+        public IActionResult DeleteMembership(int id)
+        {
+            var deger = _context.Memberships.Find(id);
+            if (deger != null)
+            {
+                _context.Memberships.Remove(deger);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Membership");
+        }
+        [HttpGet]
+        public IActionResult UpdateMembership(int id)
+        {
+            var deger = _context.Memberships.Find(id);
+            return View(deger);
+        }
+        [HttpPost]
+        public IActionResult UpdateMembership(Entity.Entities.Membership membership)
+        {
+            var deger = _context.Memberships.Find(membership.MembershipId);
+            if (deger != null)
+            {
+                deger.Organisation = membership.Organisation;
+                deger.Position = membership.Position;
+                deger.StartDate = membership.StartDate;
+                deger.EndDate = membership.EndDate;
+                _context.Update(deger);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Membership", "Default");
+        }
+        [HttpGet]
+        public IActionResult Language()
+        {
+            var deger = _context.Languages.ToList();
+            return View(deger);
+        }
+        [HttpGet]
+        public IActionResult AddLanguage()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddLanguage(Entity.Entities.Language language)
+        {
+            _context.Add(language);
+            _context.SaveChanges();
+            return RedirectToAction("Language");
+        }
+        public IActionResult DeleteLanguage(int id)
+        {
+            var deger = _context.Languages.Find(id);
+            if (deger != null)
+            {
+                _context.Languages.Remove(deger);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Language");
+        }
+        [HttpGet]
+        public IActionResult UpdateLanguage(int id)
+        {
+            var deger = _context.Languages.Find(id);
+            return View(deger);
+        }
+        [HttpPost]
+        public IActionResult UpdateLanguage(Entity.Entities.Language language)
+        {
+            var deger = _context.Languages.Find(language.LanguageID);
+            if (deger != null)
+            {
+                deger.LanguageName = language.LanguageName;
+                deger.LanguageLevel = language.LanguageLevel;                
+                _context.Update(deger);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Language", "Default");
+        }
+        [HttpGet]
+        public IActionResult Stack()
+        {
+            var deger = _context.Stacks.ToList();
+            return View(deger);
+        }
+        [HttpGet]
+        public IActionResult AddStack()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddStack(Entity.Entities.Stack stack)
+        {
+            _context.Add(stack);
+            _context.SaveChanges();
+            return RedirectToAction("Stack");
+        }
+        public IActionResult DeleteStack(int id)
+        {
+            var deger = _context.Stacks.Find(id);
+            if (deger != null)
+            {
+                _context.Stacks.Remove(deger);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Stack");
+        }
+        [HttpGet]
+        public IActionResult UpdateStack(int id)
+        {
+            var deger = _context.Stacks.Find(id);
+            return View(deger);
+        }
+        [HttpPost]
+        public IActionResult UpdateStack(Entity.Entities.Stack stack)
+        {
+            var deger = _context.Stacks.Find(stack.StackId);
+            if (deger != null)
+            {
+                deger.Description = stack.Description;
+                _context.Update(deger);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Stack", "Default");
+        }
     }
 }

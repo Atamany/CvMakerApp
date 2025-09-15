@@ -1,0 +1,19 @@
+﻿@using CvMakerApp.Entity.Entities
+@model Stack
+@{
+    ViewData["Title"] = "AddStack";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<h3>Teknik Beceri Ekle</h3>
+<br />
+<form method="post">
+    <label>Yetkinlikler: </label>
+    <textarea rows="5" class="form-control" asp-for="Description"></textarea><br />
+    <button type="submit" class="btn btn-primary">Ekle</button>
+</form>
+
+
+
+
+
+

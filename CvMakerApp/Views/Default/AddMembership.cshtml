@@ -1,0 +1,23 @@
+﻿@using CvMakerApp.Entity.Entities
+@model Membership
+@{
+    ViewData["Title"] = "AddMembership";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<h3>Üyelik Ekle</h3>
+<br />
+<form method="post">
+    <label>Organizasyon: </label>
+    <input type="text" class="form-control" asp-for="Organisation" /><br />
+    <label>Pozisyon: </label>
+    <input type="text" class="form-control" asp-for="Position" /><br />
+    <label>Başlangıç Tarihi: </label>
+    <input type="text" class="form-control" asp-for="StartDate" /><br />
+    <label>Bitiş Tarihi: </label>
+    <input type="text" class="form-control" asp-for="EndDate" /><br />
+    <button type="submit" class="btn btn-primary">Ekle</button>
+</form>
+
+
+
+
