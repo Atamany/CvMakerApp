@@ -131,5 +131,55 @@ namespace CvMakerApp.Controllers
             }
             return RedirectToAction("Experience", "Default");
         }
+        [HttpGet]
+        public IActionResult Education()
+        {
+            var deger = _context.Educations.ToList();
+            return View(deger);
+        }
+        [HttpGet]
+        public IActionResult AddEducation()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddEducation(Entity.Entities.Education education)
+        {
+            _context.Add(education);
+            _context.SaveChanges();
+            return RedirectToAction("Education");
+        }
+        public IActionResult DeleteEducation(int id)
+        {
+            var deger = _context.Educations.Find(id);
+            if (deger != null)
+            {
+                _context.Educations.Remove(deger);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Education");
+        }
+        [HttpGet]
+        public IActionResult UpdateEducation(int id)
+        {
+            var deger = _context.Educations.Find(id);
+            return View(deger);
+        }
+        [HttpPost]
+        public IActionResult UpdateEducation(Entity.Entities.Education education)
+        {
+            var deger = _context.Educations.Find(education.EducationId);
+            if (deger != null)
+            {
+                deger.SchoolName = education.SchoolName;
+                deger.Department = education.Department;
+                deger.EducationalType = education.EducationalType;
+                deger.StartDate = education.StartDate;
+                deger.EndDate = education.EndDate;
+                _context.Update(deger);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Education", "Default");
+        }
     }
 }

@@ -1,0 +1,43 @@
+﻿@using CvMakerApp.Entity.Entities
+@model List<Education>
+@{
+    ViewData["Title"] = "Education";
+    Layout = "~/Views/Admin/Index.cshtml";
+    var count = 0;
+}
+
+<h1>Eğitim</h1>
+<table class="table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Okul</th>
+            <th>Bölüm</th>
+            <th>Tür</th>
+            <th>Başlangıç Tarihi</th>
+            <th>Bitiş Tarihi</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(++count)</td>
+                <td>@item.SchoolName</td>
+                <td>@item.Department</td>
+                <td>@item.EducationalType</td>
+                <td>@item.StartDate</td>
+                <td>@item.EndDate</td>
+                <td><a href="~/Default/DeleteEducation/@item.EducationId" class="btn btn-danger">Sil</a></td>
+                <td><a href="~/Default/UpdateEducation/@item.EducationId" class="btn btn-warning">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<td><a href="~/Default/AddEducation/" class="btn btn-primary">Ekle</a></td>
+
+
+
+

@@ -1,0 +1,26 @@
+﻿@using CvMakerApp.Entity.Entities
+@model Education
+@{
+    ViewData["Title"] = "UpdateEducation";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<h3>Eğitim Güncelle</h3>
+<br />
+<form method="post">
+    <input type="hidden" class="form-control" asp-for="EducationId" value="@Model.EducationId" />
+    <label>Okul: </label>
+    <input type="text" class="form-control" asp-for="SchoolName" value="@Model.SchoolName" /><br />
+    <label>Bölüm: </label>
+    <input type="text" class="form-control" asp-for="Department" value="@Model.Department" /><br />
+    <label>Tür: </label>
+    <input type="text" class="form-control" asp-for="EducationalType" value="@Model.EducationalType" /><br />
+    <label>Başlangıç Tarihi: </label>
+    <input type="text" class="form-control" asp-for="StartDate" value="@Model.StartDate" /><br />
+    <label>Bitiş Tarihi: </label>
+    <input type="text" class="form-control" asp-for="EndDate" value="@Model.EndDate" /><br />
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>
+
+
+
+
