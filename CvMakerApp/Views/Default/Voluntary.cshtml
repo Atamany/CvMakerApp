@@ -1,0 +1,37 @@
+﻿@using CvMakerApp.Entity.Entities
+@model List<Voluntary>
+@{
+    ViewData["Title"] = "Voluntary";
+    Layout = "~/Views/Admin/Index.cshtml";
+    var count = 0;
+}
+
+<h1>Gönüllülük & Topluluk Faaliyetleri </h1>
+<table class="table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Şirket</th>
+            <th>Pozisyon</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(++count)</td>
+                <td>@item.CompanyName</td>
+                <td>@item.Position</td>
+                <td><a href="~/Default/DeleteVoluntary/@item.VoluntaryId" class="btn btn-danger">Sil</a></td>
+                <td><a href="~/Default/UpdateVoluntary/@item.VoluntaryId" class="btn btn-warning">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<td><a href="~/Default/AddVoluntary/" class="btn btn-primary">Ekle</a></td>
+
+
+
+

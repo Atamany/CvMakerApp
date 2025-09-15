@@ -1,0 +1,35 @@
+﻿@using CvMakerApp.Entity.Entities
+@model List<Testimonial>
+@{
+    ViewData["Title"] = "Testimonial";
+    Layout = "~/Views/Admin/Index.cshtml";
+    var count = 0;
+}
+
+<h1>Referanslar </h1>
+<table class="table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Referans</th>
+            <th>Pozisyon</th>
+            <th>Şirket</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(++count)</td>
+                <td>@item.TestimonialName</td>
+                <td>@item.Position</td>
+                <td>@item.Company</td>
+                <td><a href="~/Default/DeleteTestimonial/@item.TestimonialId" class="btn btn-danger">Sil</a></td>
+                <td><a href="~/Default/UpdateTestimonial/@item.TestimonialId" class="btn btn-warning">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<td><a href="~/Default/AddTestimonial/" class="btn btn-primary">Ekle</a></td>

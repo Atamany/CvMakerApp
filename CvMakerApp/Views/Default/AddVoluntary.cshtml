@@ -1,0 +1,18 @@
+﻿@using CvMakerApp.Entity.Entities
+@model Voluntary
+@{
+    ViewData["Title"] = "AddVoluntary";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<h3>Topluluk Faaliyeti Ekle</h3>
+<br />
+<form method="post">
+    <label>Şirket: </label>
+    <input type="text" class="form-control" asp-for="CompanyName" /><br />
+    <label>Pozisyon: </label>
+    <input type="text" class="form-control" asp-for="Position" /><br />
+    <button type="submit" class="btn btn-primary">Ekle</button>
+</form>
+
+
+

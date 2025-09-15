@@ -271,7 +271,7 @@ namespace CvMakerApp.Controllers
             if (deger != null)
             {
                 deger.LanguageName = language.LanguageName;
-                deger.LanguageLevel = language.LanguageLevel;                
+                deger.LanguageLevel = language.LanguageLevel;
                 _context.Update(deger);
                 _context.SaveChanges();
             }
@@ -322,6 +322,101 @@ namespace CvMakerApp.Controllers
                 _context.SaveChanges();
             }
             return RedirectToAction("Stack", "Default");
+        }
+        [HttpGet]
+        public IActionResult Voluntary()
+        {
+            var deger = _context.Voluntaries.ToList();
+            return View(deger);
+        }
+        [HttpGet]
+        public IActionResult AddVoluntary()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddVoluntary(Entity.Entities.Voluntary voluntary)
+        {
+            _context.Add(voluntary);
+            _context.SaveChanges();
+            return RedirectToAction("Voluntary");
+        }
+        public IActionResult DeleteVoluntary(int id)
+        {
+            var deger = _context.Voluntaries.Find(id);
+            if (deger != null)
+            {
+                _context.Voluntaries.Remove(deger);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Voluntary");
+        }
+        [HttpGet]
+        public IActionResult UpdateVoluntary(int id)
+        {
+            var deger = _context.Voluntaries.Find(id);
+            return View(deger);
+        }
+        [HttpPost]
+        public IActionResult UpdateVoluntary(Entity.Entities.Voluntary voluntary)
+        {
+            var deger = _context.Voluntaries.Find(voluntary.VoluntaryId);
+            if (deger != null)
+            {
+                deger.CompanyName = voluntary.CompanyName;
+                deger.Position = voluntary.Position;
+                _context.Update(deger);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Voluntary", "Default");
+        }
+        [HttpGet]
+        public IActionResult Testimonial()
+        {
+            var deger = _context.Testimonials.ToList();
+            return View(deger);
+        }
+        [HttpGet]
+        public IActionResult AddTestimonial()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddTestimonial(Entity.Entities.Testimonial testimonial)
+        {
+            _context.Add(testimonial);
+            _context.SaveChanges();
+            return RedirectToAction("Testimonial");
+        }
+        public IActionResult DeleteTestimonial(int id)
+        {
+            var deger = _context.Testimonials.Find(id);
+            if (deger != null)
+            {
+                _context.Testimonials.Remove(deger);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Testimonial");
+        }
+        [HttpGet]
+        public IActionResult UpdateTestimonial(int id)
+        {
+            var deger = _context.Testimonials.Find(id);
+            return View(deger);
+        }
+        [HttpPost]
+        public IActionResult UpdateTestimonial(Entity.Entities.Testimonial testimonial)
+        {
+            var deger = _context.Testimonials.Find(testimonial.TestimonialId);
+            if (deger != null)
+            {
+                deger.TestimonialName = testimonial.TestimonialName;
+                deger.Position = testimonial.Position;
+                deger.Company = testimonial.Company;
+                _context.Update(deger);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Testimonial", "Default");
         }
     }
 }

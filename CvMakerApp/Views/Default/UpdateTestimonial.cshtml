@@ -1,0 +1,19 @@
+﻿@using CvMakerApp.Entity.Entities
+@model Testimonial
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<h3>Referans Güncelle</h3>
+<br />
+<form method="post">
+    <input type="hidden" class="form-control" asp-for="TestimonialId" value="@Model.TestimonialId" />
+    <label>Referans: </label>
+    <input type="text" class="form-control" asp-for="TestimonialName" value="@Model.TestimonialName" /><br />
+    <label>Pozisyon: </label>
+    <input type="text" class="form-control" asp-for="Position" value="@Model.Position" /><br />
+    <label>Şirket: </label>
+    <input type="text" class="form-control" asp-for="Company" value="@Model.Company" /><br />
+    
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>
